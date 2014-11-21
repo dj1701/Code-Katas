@@ -127,5 +127,27 @@ namespace Kata.PrimeFactor.Tests
 
             Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void Given_a_value_of_7919_expect_prime_number_7919()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(7919);
+            var expected = new List<int> { 7919 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Given_a_value_of_7919_expect_prime_factors_2x2x2x2x3x3x5x5()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(7920);
+            var expected = new List<int> { 2,2,2,2,3,3,5 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
     }
 }

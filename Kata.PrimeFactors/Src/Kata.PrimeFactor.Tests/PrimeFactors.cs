@@ -13,6 +13,8 @@ namespace Kata.PrimeFactor.Tests
     
     public class PrimeFactors : IPrimeFactors   
     {
+        private readonly List<int> _primeFactors = new List<int>();
+        
         public List<int> Generate(int given)
         {
             if (given == 1)
@@ -20,36 +22,45 @@ namespace Kata.PrimeFactor.Tests
                 throw new ArgumentException("1 cannot by factored");
             }
 
-            var divider = 2;
+            const int divider = 2;
             var primeFactor = given;
 
-            var primeFactors = FindPrimeFactors(ref primeFactor, divider);
-            divider+=1;
-            primeFactors.AddRange(FindPrimeFactors(ref primeFactor, divider));
+            FindPrimeFactors(primeFactor, divider);
 
-            if (primeFactors.Count == 0)
+            if (_primeFactors.Count == 0)
             {
                 //Its a prime number
-                primeFactors.Add(given);
+                _primeFactors.Add(given);
             }
 
-            primeFactors.Sort();
-            return primeFactors;
+            _primeFactors.Sort();
+            return _primeFactors;
         }
 
-        private List<int> FindPrimeFactors(ref int primeFactor, int divider)
+        private List<int> FindPrimeFactors(int primeFactor, int divider)
         {
-            var primeFactors = new List<int>();
-
-            while (primeFactor%divider == 0)
+            while (primeFactor%divider == 0 && primeFactor > 0)
             {
                 primeFactor /= divider;
                 if (primeFactor >= 1)
                 {
-                    primeFactors.Add(divider);
+                    _primeFactors.Add(divider);
                 }
             }
-            return primeFactors;
+            divider+=1;
+            if (primeFactor%divider == 0 && primeFactor > 0)
+            {
+                FindPrimeFactors(primeFactor, divider);
+            }
+            else
+            {
+                divider+=1;
+                if (primeFactor%divider == 0 && primeFactor > 0)
+                {
+                    FindPrimeFactors(primeFactor, divider);
+                }
+            }
+            return _primeFactors;
         }
 
 
