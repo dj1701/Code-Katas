@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.PrimeFactor.Tests", "Kata.PrimeFactor.Tests\Kata.PrimeFactor.Tests.csproj", "{2FD6B5EF-977D-4A9E-8D55-6181CDE1F87D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.PrimeFactor.Tests", "Src\Kata.PrimeFactor.Tests\Kata.PrimeFactor.Tests.csproj", "{2FD6B5EF-977D-4A9E-8D55-6181CDE1F87D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

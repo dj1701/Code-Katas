@@ -82,5 +82,50 @@ namespace Kata.PrimeFactor.Tests
 
             Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void Given_a_value_of_8_expect_prime_factors_2x2x2()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(8);
+            var expected = new List<int> { 2,2,2 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Given_a_value_of_9_expect_prime_factors_3x3()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(9);
+            var expected = new List<int> { 3,3 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
+
+
+        [Test]
+        public void Given_a_value_of_73_expect_prime_number_73()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(73);
+            var expected = new List<int> { 73 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Given_a_value_of_72_expect_prime_factors_2x2x2x3x3()
+        {
+            var primeFactors = new PrimeFactors();
+
+            var listOfPrimeFactors = primeFactors.Generate(72);
+            var expected = new List<int> { 2,2,2,3,3 };
+
+            Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
+        }
     }
 }

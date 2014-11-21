@@ -7,8 +7,8 @@ namespace Kata.PrimeFactor.Tests
 {
     public interface IPrimeFactors
     {
-        //List<int> Generate(int given);
-        List<int> GeneratePrime(int given);
+        List<int> Generate(int given);
+        //List<int> GeneratePrime(int given);
     }
     
     public class PrimeFactors : IPrimeFactors   
