@@ -140,12 +140,12 @@ namespace Kata.PrimeFactor.Tests
         }
 
         [Test]
-        public void Given_a_value_of_7919_expect_prime_factors_2x2x2x2x3x3x5x5()
+        public void Given_a_value_of_7920_expect_prime_factors_2x2x2x2x3x3x5x11()
         {
             var primeFactors = new PrimeFactors();
 
             var listOfPrimeFactors = primeFactors.Generate(7920);
-            var expected = new List<int> { 2,2,2,2,3,3,5 };
+            var expected = new List<int> { 2,2,2,2,3,3,5,11 };
 
             Assert.That(listOfPrimeFactors, Is.EqualTo(expected));
         }
